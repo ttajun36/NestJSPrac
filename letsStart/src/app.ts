@@ -21,6 +21,10 @@ app.get("/cats/som", (req, res) => {
   res.send({ som: Cat[1] });
 });
 
+app.use((req, res, next) => {
+  res.send({ error: "404 not found error" });
+});
+
 app.listen(8000, () => {
   console.log("server is on...");
 });
